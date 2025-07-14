@@ -1,2 +1,44 @@
+# ===================================================================
+# robots.txt for https://makadhillsaklub.com
+#
+# This file tells search engine crawlers which pages or files
+# they can or can't request from your site.
+# ===================================================================
+
+# Allow all major search engine crawlers
 User-agent: *
-Disallow:
+
+# Disallow crawling of user-specific, administrative, and low-value pages.
+# This helps focus crawl budget on the important content.
+
+# Disallow user authentication pages
+Disallow: /login
+Disallow: /register
+Disallow: /signin
+Disallow: /signup
+
+# Disallow user account and private areas
+Disallow: /account/
+Disallow: /profile/
+Disallow: /my-account/
+
+# Disallow backend/admin panel
+Disallow: /admin/
+Disallow: /dashboard/
+
+# Disallow internal search results pages to prevent duplicate content
+Disallow: /search/
+
+# Disallow cart, checkout, or transaction-related pages
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /payment/
+
+# Disallow crawling of URLs with parameters to avoid duplicate content.
+# Use with caution if your site relies on parameters for essential content.
+Disallow: /*?
+
+# ===================================================================
+# Point crawlers to the XML Sitemap for a complete list of indexable pages.
+# ===================================================================
+Sitemap: https://makadhillsaklub.com/sitemap.xml
